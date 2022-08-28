@@ -2,8 +2,6 @@ package test.java;
 
 import org.junit.Test;
 
-import main.java.ChargingRange;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
