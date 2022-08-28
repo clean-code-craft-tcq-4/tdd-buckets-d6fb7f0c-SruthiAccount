@@ -1,13 +1,15 @@
 package test.java;
 
-import org.junit.Test;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+
+import main.java.ChargingRange;
 
 public class ChargingRangeTest {
 	ChargingRange chargingRange = new ChargingRange();
@@ -16,7 +18,6 @@ public class ChargingRangeTest {
 	public void checkRangesOfTwoElements() {
 		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(1, 2));
 		Map<String, Integer> result = chargingRange.calculateRanges(inputData);
-		assertTrue(!result.isEmpty());
 		assertTrue(result.get("1 - 2") == 2);
 	}
 
@@ -24,7 +25,6 @@ public class ChargingRangeTest {
 	public void checkRangeOfTwoElementsFailed() {
 		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(3, 4));
 		Map<String, Integer> result = chargingRange.calculateRanges(inputData);
-		assertTrue(!result.isEmpty());
 		assertTrue(result.get("5 - 6") == null);
 	}
 
@@ -39,9 +39,8 @@ public class ChargingRangeTest {
 
 	@Test
 	public void checkRangesMoreDataFailed() {
-		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(1, 9, 6, 7, 8, 9, 10));
+		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(1, 9, 6, 7, 8, 9, 10,11));
 		Map<String, Integer> result = chargingRange.calculateRanges(inputData);
-		assertTrue(!result.isEmpty());
 		assertFalse(result.get("7 - 10") == 4);
 		assertFalse(result.get("1 - 1") == 2);
 
