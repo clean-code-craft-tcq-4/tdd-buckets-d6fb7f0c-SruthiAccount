@@ -25,7 +25,7 @@ public class ChargingRangeTest {
 		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(3, 4));
 		Map<String, Integer> result = chargingRange.calculateRanges(inputData);
 		assertTrue(!result.isEmpty());
-		assertTrue(result.get("1 - 2") == null);
+		assertTrue(result.get("5 - 6") == null);
 	}
 
 	@Test
@@ -42,7 +42,7 @@ public class ChargingRangeTest {
 		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(1, 9, 6, 7, 8, 9, 10));
 		Map<String, Integer> result = chargingRange.calculateRanges(inputData);
 		assertTrue(!result.isEmpty());
-		assertFalse(result.get("6 - 10") == 4);
+		assertFalse(result.get("7 - 10") == 4);
 		assertFalse(result.get("1 - 1") == 2);
 
 	}
