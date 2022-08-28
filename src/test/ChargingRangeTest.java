@@ -15,6 +15,7 @@ public class ChargingRangeTest {
 	public void checkRangesOfTwoElements() {
 		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(1, 2));
 		Map<String, Integer> result = chargingRange.calculateRanges(inputData);
+		assertTrue(!result.isEmpty());
 		assertTrue(result.get("1 - 2") == 2);
 	}
 
@@ -38,7 +39,7 @@ public class ChargingRangeTest {
 	public void checkRangesMoreDataFailed() {
 		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(1, 9, 6, 7, 8, 9, 10, 11));
 		Map<String, Integer> result = chargingRange.calculateRanges(inputData);
-		assertFalse(result.get("7 - 10") == 4);
+		assertFalse(result.get("7 - 10") == null);
 		assertFalse(result.get("1 - 1") == 2);
 
 	}
