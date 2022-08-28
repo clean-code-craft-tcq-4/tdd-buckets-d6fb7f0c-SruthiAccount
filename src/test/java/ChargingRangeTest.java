@@ -1,6 +1,4 @@
-package test.java;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -8,8 +6,6 @@ import java.util.Arrays;
 import java.util.Map;
 
 import org.junit.Test;
-
-import main.java.ChargingRange;
 
 public class ChargingRangeTest {
 	ChargingRange chargingRange = new ChargingRange();
@@ -39,7 +35,7 @@ public class ChargingRangeTest {
 
 	@Test
 	public void checkRangesMoreDataFailed() {
-		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(1, 9, 6, 7, 8, 9, 10,11));
+		ArrayList<Integer> inputData = new ArrayList<>(Arrays.asList(1, 9, 6, 7, 8, 9, 10, 11));
 		Map<String, Integer> result = chargingRange.calculateRanges(inputData);
 		assertFalse(result.get("7 - 10") == 4);
 		assertFalse(result.get("1 - 1") == 2);
