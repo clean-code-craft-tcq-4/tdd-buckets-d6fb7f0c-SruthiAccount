@@ -20,10 +20,7 @@ public class ChargingRange {
 			}
 			prevElement = chargingData.get(j);
 		}
-		System.out.println("Range, Readings");
-		for (Map.Entry<String, Integer> entry : csvFormatOutput.entrySet())
-			System.out.println(entry.getKey() + ", " + entry.getValue());
-		return csvFormatOutput;
+	return csvFormatOutput;
 	}
 
 }
